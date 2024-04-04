@@ -1,17 +1,24 @@
 public class Main {
     public static void main(String[] args) {
-        Plane p1 = new Plane("Боинг 747", "пассажирский", 1000);
+        Plane p1 = new Plane("Боинг747", "пассажирский", 1000);
         String s1 = p1.toString();
         System.out.println(s1);
         Plane p2 = new Plane("ТУ-154", "грузовой", 2000);
         p2.setName("СуперДжет100");
         p2.setType("пассажирский");
-        System.out.println(p2);
-        System.out.println("дальность полета в км = " + p2.getRange());
-        Plane p3=p2;
-        p3.setName("СУ25");
+                System.out.println("дальность полета в км = " + p2.getRange());
+        Plane p3 = new Plane("ТУ-154", "грузовой", 2000);
+                p3.setName("СУ25");
         p3.setType("боевой");
+        Plane p4 = new Plane("ТУ-154", "грузовой", 3000);
+        System.out.println(p1);
+        System.out.println(p2);
         System.out.println(p3);
+        System.out.println("-----------------------------------------------------------");
+        Plane[] planes={p1,p2,p3,p4};
+        for (int i = 0; i < planes.length; i++) {
+            System.out.println(planes[i]);
+        }
 
         //Cat o3 = new Cat("Мурзик", "черный", 8.4);
         //System.out.println(o2);
@@ -63,6 +70,7 @@ class Plane {
         System.out.println("переименование " + this.producer + " в " + name);
         this.producer = name;
     }
+
     public void setType(String name) {
         System.out.println("изменение типа c " + this.type + " на " + name);
         this.type = name;
